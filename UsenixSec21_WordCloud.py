@@ -7,7 +7,7 @@ import json
 import os
 
 JSON_FILE = 'UsenixSecurity21.json'
-FONT = '/System/Library/Fonts/Supplemental/Comic Sans MS.ttf'
+FONT = './Comic Sans MS.ttf'
 
 urls = [
     'https://www.usenix.org/conference/usenixsecurity21/technical-sessions', 
@@ -56,10 +56,10 @@ else:
                 abstract = abstracts[i].get_text()
                 article_dict[title] = abstract
             papers[section_name] = article_dict
-    #print papers
     with open(JSON_FILE, 'wb') as f:
         f.write(json.dumps(papers))
 
+#print papers
 #print papers.keys()
 
 title_text = ''
